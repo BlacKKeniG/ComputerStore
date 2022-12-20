@@ -8,15 +8,25 @@
 
 
     &__slider {
+        position: relative;
+
         &__slide {
-            display: flex;
+            display: none;
             justify-content: end;
             column-gap: 10%;
+            opacity: .0;
+            //display: none;
             @include height-adaptation(400, 720, $minPCWidth, $maketWidth);
+            transition: opacity 1s ease-out;
+
+            &_current {
+                display: flex;
+                opacity: 1;
+                transition: opacity 0.6s ease-out;
+            }
 
             &__ls {
-                //height: 100%;
-                max-width: 400px;
+                max-width: 420px;
                 display: flex;
                 flex-direction: column;
                 row-gap: 10px;
@@ -38,7 +48,7 @@
                 font-weight: 700;
                 color: $main-color;
                 line-height: 1.2em;
-                @include font-adaptation(39, 60, $minPCWidth, $maketWidth);
+                @include font-adaptation(36, 60, $minPCWidth, $maketWidth);
             }
 
             &__descr {
@@ -72,10 +82,8 @@
 
             &__rs {
                 min-width: 50%;
-                //height: 100%;
                 background-color: #FFF7E1;
                 border-radius: 30px;
-                //@include pading-bottom-adaptation(100, 200, $minPCWidth, $maketWidth);
                 position: relative;
 
             }
@@ -95,6 +103,54 @@
                     @include optimization_cover;
                 }
             }
+        }
+
+        &__btn {
+            background: $main-color;
+            font-family: "Poppins";
+            font-weight: 700;
+            color: #FFFFFF;
+            @include font-adaptation(12, 20, $minPCWidth, $maketWidth);
+            @include adaptation(height, 35, 55, $minPCWidth, $maketWidth, 0.1);
+            position: absolute;
+            @include adaptation(bottom, 30, 60, $minPCWidth, $maketWidth, 0.1);
+        }
+
+        &__nav-btn-wrapper {
+            position: absolute;
+            right: calc(50% - 55px);
+            display: flex;
+            column-gap: 50px;
+            @include adaptation(bottom, 30, 60, $minPCWidth, $maketWidth, 0.1);
+        }
+
+        &__nav-btn {
+            height: 55px;
+            border-radius: 100%;
+            background-color: #e9ecec;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include adaptation(width, 35, 55, $minPCWidth, $maketWidth, 0.35);
+            @include adaptation(height, 35, 55, $minPCWidth, $maketWidth, 0.35);
+
+            img {
+                height: 40%;
+            }
+        }
+
+        &__counter {
+            font-family: "Poppins";
+            @include font-adaptation(12, 20, $minPCWidth, $maketWidth);
+            color: $main-color;
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            position: absolute;
+            //left: 50%;
+            @include adaptation(bottom, 30, 60, $minPCWidth, $maketWidth, 0.1);
+            @include adaptation(left, 150, 330, $minPCWidth, $maketWidth, 0.4);
+            @include adaptation(height, 35, 55, $minPCWidth, $maketWidth, 0.1);
 
         }
     }

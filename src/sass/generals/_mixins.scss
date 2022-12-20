@@ -76,3 +76,19 @@
         bottom: #{$maxSize + px};
     }
 }
+
+@mixin adaptation($property, $minSize, $maxSize, $minWidth, $maxWidth, $coefficient) {
+    $addSize: ($maxSize - $minSize * $coefficient);
+
+    @media(max-width: #{$maxWidth + px}) {
+        #{$property}: #{$minSize + px};
+    }
+
+    @media(min-width: #{$minWidth + px}) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+    }
+
+    @media(min-width: #{$maxWidth + px}) {
+        #{$property}: #{$maxSize + px};
+    }
+}
