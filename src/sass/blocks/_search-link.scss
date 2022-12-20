@@ -1,0 +1,11 @@
+.search-link {
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    &__img {
+        @include optimization_cover;
+    }
+
+    @include hover_scale;
+}

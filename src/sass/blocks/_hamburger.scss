@@ -1,0 +1,14 @@
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__line {
+        border: 2px $text-color-main solid;
+    }
+
+    @include hover_scale;
+}

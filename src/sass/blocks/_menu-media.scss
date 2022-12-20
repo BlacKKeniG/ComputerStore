@@ -1,0 +1,36 @@
+@media(max-width: 1200px) {
+    .menu {
+        column-gap: 30px;
+
+        &__list {
+            column-gap: 20px;
+        }
+    }
+}
+
+@media(max-width: 992px) {
+    .menu {
+        &__list {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        &__wrapper {
+            justify-content: flex-end;
+            column-gap: 40px
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .menu {
+        padding: 0 20px;
+    }
+
+    .menu .btn {
+        display: none;
+    }
+}

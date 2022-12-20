@@ -1,0 +1,36 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@import "./base/body";
+@import "./base/container";
+
+@import "./generals/variables";
+@import "./generals/mixins";
+@import "./generals/btns";
+@import "./generals/text-colors";
+
+@import "./blocks/hamburger";
+@import "./blocks/menu";
+@import "./blocks/body-overlay";
+@import "./blocks/side-bar";
+@import "./blocks/basket-link";
+@import "./blocks/search-link";
+@import "./blocks/promo";
+
+@import "./blocks/menu-media";
+@import "./blocks/promo-media";

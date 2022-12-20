@@ -1,0 +1,78 @@
+@mixin optimization_cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@mixin hover_scale {
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+@mixin font-adaptation($minSize, $maxSize, $minWidth, $maxWidth) {
+
+    $addSize: ($maxSize - $minSize * 0.4);
+
+    @media(max-width: #{$maxWidth + px}) {
+        font-size: #{$minSize + px};
+    }
+
+    @media(min-width: #{$minWidth + px}) {
+        font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+    }
+
+    @media(min-width: #{$maxWidth + px}) {
+        font-size: #{$maxSize + px};
+    }
+}
+
+
+@mixin height-adaptation ($minSize, $maxSize, $minWidth, $maxWidth) {
+    $addSize: ($maxSize - $minSize * 0.1);
+
+    @media(max-width: #{$maxWidth + px}) {
+        height: #{$minSize + px};
+    }
+
+    @media(min-width: #{$minWidth + px}) {
+        height: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+    }
+
+    @media(min-width: #{$maxWidth + px}) {
+        height: #{$maxSize + px};
+    }
+}
+
+@mixin pading-bottom-adaptation ($minSize, $maxSize, $minWidth, $maxWidth) {
+    $addSize: ($maxSize - $minSize * 0.1);
+
+    @media(max-width: #{$maxWidth + px}) {
+        padding-bottom: #{$minSize + px};
+    }
+
+    @media(min-width: #{$minWidth + px}) {
+        padding-bottom: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+    }
+
+    @media(min-width: #{$maxWidth + px}) {
+        padding-bottom: #{$maxSize + px};
+    }
+}
+
+@mixin position-bottom-adaptation ($minSize, $maxSize, $minWidth, $maxWidth) {
+    $addSize: ($maxSize - $minSize * 0.1);
+
+    @media(max-width: #{$maxWidth + px}) {
+        bottom: #{$minSize + px};
+    }
+
+    @media(min-width: #{$minWidth + px}) {
+        bottom: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$minWidth + px}) / #{$maxWidth}));
+    }
+
+    @media(min-width: #{$maxWidth + px}) {
+        bottom: #{$maxSize + px};
+    }
+}

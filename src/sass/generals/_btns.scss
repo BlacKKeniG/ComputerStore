@@ -1,0 +1,28 @@
+.btn {
+    display: block;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #e9ecec;
+    text-align: center;
+    text-transform: uppercase;
+    font: 12px "Poppins";
+    font-weight: 700;
+    padding: 12px;
+    color: $text-color-main;
+
+    &:hover {
+        background-color: #bbbebe;
+    }
+}
+
+.btn-iner-shevron {
+    margin-left: 10px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+
+    img {
+        @include optimization_cover
+    }
+}

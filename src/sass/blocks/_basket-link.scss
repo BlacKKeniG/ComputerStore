@@ -1,0 +1,28 @@
+.basket-link {
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 27px;
+
+    &__img {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 70%;
+    }
+
+    &__counter {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 17px;
+        height: 17px;
+        font: 11px "Poppins";
+        background-color: $main-color;
+        text-align: center;
+        color: #fff;
+        border-radius: 4px;
+    }
+
+    @include hover_scale;
+}
