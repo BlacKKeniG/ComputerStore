@@ -6,11 +6,11 @@ export default function promoSlider() {
     const counterTotal = document.querySelector(".promo__slider__counter__total");
     const counterCurrentSlide = document.querySelector(".promo__slider__counter__current");
     
-    let id;
+    let autoPlayIntervalID;
     let currentSlide = 1;
     counterTotal.textContent = numOfSlide;
-    showSlide(currentSlide);
-    autoPlay(currentSlide);
+    showSlide();
+    autoPlay();
 
     prev.addEventListener('click', () => {
         showPrevSlide();
@@ -48,11 +48,11 @@ export default function promoSlider() {
     }
 
     function autoPlay() {
-        id = setInterval(showNextSlide, 3000);
+        autoPlayIntervalID = setInterval(showNextSlide, 3000);
     }
 
     function stopAutoPlay() {
-        clearInterval(id);
+        clearInterval(autoPlayIntervalID);
     }
 }     
     
