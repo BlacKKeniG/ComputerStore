@@ -1,4 +1,4 @@
-export default function promoSlider() {
+export default function promoSlider(isAutoPlay = false) {
     const slideList = document.querySelectorAll('.promo__slider__slide');
     const prev = document.querySelector('#promo__slider__prev');
     const next = document.querySelector('#promo__slider__next');
@@ -6,11 +6,16 @@ export default function promoSlider() {
     const counterTotal = document.querySelector(".promo__slider__counter__total");
     const counterCurrentSlide = document.querySelector(".promo__slider__counter__current");
     
+    let isAutoPlay = isAutoPlay;
     let autoPlayIntervalID;
     let currentSlide = 1;
     counterTotal.textContent = numOfSlide;
+
     showSlide();
-    autoPlay();
+    if(isAutoPlay) {
+        autoPlay();
+    } 
+        
 
     prev.addEventListener('click', () => {
         showPrevSlide();

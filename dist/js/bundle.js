@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/modules/body-overlay.js":
@@ -8,6 +7,7 @@
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "bodyOverlayMakeHidden": () => (/* binding */ bodyOverlayMakeHidden),
@@ -44,6 +44,7 @@ function bodyOverlay() {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ hamburger)
@@ -66,72 +67,9 @@ function hamburger() {
 /*!****************************************!*\
   !*** ./src/js/modules/promo-slider.js ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ promoSlider)
-/* harmony export */ });
-function promoSlider() {
-    const slideList = document.querySelectorAll('.promo__slider__slide');
-    const prev = document.querySelector('#promo__slider__prev');
-    const next = document.querySelector('#promo__slider__next');
-    const numOfSlide = slideList.length;
-    const counterTotal = document.querySelector(".promo__slider__counter__total");
-    const counterCurrentSlide = document.querySelector(".promo__slider__counter__current");
-    
-    let autoPlayIntervalID;
-    let currentSlide = 1;
-    counterTotal.textContent = numOfSlide;
-    showSlide();
-    autoPlay();
-
-    prev.addEventListener('click', () => {
-        showPrevSlide();
-        stopAutoPlay();
-    });
-        
-    next.addEventListener('click', () => { 
-        showNextSlide();
-        stopAutoPlay();
-    });
-
-    function showSlide () {
-        slideList[currentSlide - 1].classList.add('promo__slider__slide_current');
-        counterCurrentSlide.textContent = currentSlide;
-    }
-
-    function hiddenSlide () {
-        slideList[currentSlide - 1].classList.remove('promo__slider__slide_current');
-    }
-
-    function showPrevSlide(){
-        hiddenSlide();
-        if(--currentSlide < 1){
-            currentSlide = numOfSlide;
-        }
-        showSlide();
-    }
-
-    function showNextSlide(){
-        hiddenSlide();
-        if(++currentSlide > numOfSlide){
-            currentSlide = 1;
-        }
-        showSlide();
-    }
-
-    function autoPlay() {
-        autoPlayIntervalID = setInterval(showNextSlide, 3000);
-    }
-
-    function stopAutoPlay() {
-        clearInterval(autoPlayIntervalID);
-    }
-}     
-    
-
-
+throw new Error("Module parse failed: Identifier 'isAutoPlay' has already been declared (9:8)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|     const counterCurrentSlide = document.querySelector(\".promo__slider__counter__current\");\n|     \n>     let isAutoPlay = isAutoPlay;\n|     let autoPlayIntervalID;\n|     let currentSlide = 1;");
 
 /***/ }),
 
@@ -141,6 +79,7 @@ function promoSlider() {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "closeSideBar": () => (/* binding */ closeSideBar),
@@ -225,8 +164,9 @@ function sideBar() {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!**************************!*\
   !*** ./src/js/script.js ***!
   \**************************/
