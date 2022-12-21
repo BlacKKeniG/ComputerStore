@@ -62,6 +62,79 @@ function hamburger() {
 
 /***/ }),
 
+/***/ "./src/js/modules/promo-slider.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/promo-slider.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ promoSlider)
+/* harmony export */ });
+function promoSlider() {
+    const slideList = document.querySelectorAll('.promo__slider__slide');
+    const prev = document.querySelector('#promo__slider__prev');
+    const next = document.querySelector('#promo__slider__next');
+    const numOfSlide = slideList.length;
+    const counterTotal = document.querySelector(".promo__slider__counter__total");
+    const counterCurrentSlide = document.querySelector(".promo__slider__counter__current");
+    
+    let id;
+    let currentSlide = 1;
+    counterTotal.textContent = numOfSlide;
+    showSlide(currentSlide);
+    autoPlay(currentSlide);
+
+    prev.addEventListener('click', () => {
+        showPrevSlide();
+        stopAutoPlay();
+    });
+        
+    next.addEventListener('click', () => { 
+        showNextSlide();
+        stopAutoPlay();
+    });
+
+    function showSlide () {
+        slideList[currentSlide - 1].classList.add('promo__slider__slide_current');
+        counterCurrentSlide.textContent = currentSlide;
+    }
+
+    function hiddenSlide () {
+        slideList[currentSlide - 1].classList.remove('promo__slider__slide_current');
+    }
+
+    function showPrevSlide(){
+        hiddenSlide();
+        if(--currentSlide < 1){
+            currentSlide = numOfSlide;
+        }
+        showSlide();
+    }
+
+    function showNextSlide(){
+        hiddenSlide();
+        if(++currentSlide > numOfSlide){
+            currentSlide = 1;
+        }
+        showSlide();
+    }
+
+    function autoPlay() {
+        id = setInterval(showNextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(id);
+    }
+}     
+    
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/side-bar.js":
 /*!************************************!*\
   !*** ./src/js/modules/side-bar.js ***!
@@ -161,6 +234,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
 /* harmony import */ var _modules_side_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/side-bar */ "./src/js/modules/side-bar.js");
 /* harmony import */ var _modules_body_overlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/body-overlay */ "./src/js/modules/body-overlay.js");
+/* harmony import */ var _modules_promo_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/promo-slider */ "./src/js/modules/promo-slider.js");
+
 
 
 
@@ -170,6 +245,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     (0,_modules_hamburger__WEBPACK_IMPORTED_MODULE_0__["default"])();
     (0,_modules_side_bar__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_modules_body_overlay__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_modules_promo_slider__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 })();
 

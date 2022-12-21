@@ -1,20 +1,9 @@
-@media(min-width: 1440px) {}
+@media(min-width: 1440px) {
+    .promo {}
+}
 
 @media(max-width: 1200px) {
-    .promo {
-        &__slider {
-            &__slide {
-                //column-gap: 7%;
-                // min-height: 600px;
-                //max-height: 720px;
-            }
-        }
-
-        &__ls {
-
-            padding-bottom: 100px;
-        }
-    }
+    .promo {}
 }
 
 @media(max-width: 992px) {
